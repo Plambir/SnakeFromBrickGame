@@ -4,6 +4,27 @@ function create_canvas()
     <table width='100%' height='100%'>\
       <tr>\
         <td align='center'>\
+          <table width='132px'>\
+            <tr>\
+              <td align='center'>\
+                <button id='it_is_game_play'>play</button>\
+              </td>\
+              <td align='center'>\
+                speed:<br/>\
+                <select id='it_is_game_speed'>\
+                  <option>1</option>\
+                  <option>2</option>\
+                  <option>3</option>\
+                  <option>4</option>\
+                  <option>5</option>\
+                  <option>6</option>\
+                  <option>7</option>\
+                  <option>8</option>\
+                  <option>9</option>\
+                </select>\
+              </td>\
+            </tr>\
+          </table>\
           <style>\
             #it_is_game_break\
             {\
@@ -20,6 +41,16 @@ function create_canvas()
 
 var canvas = create_canvas();
 var ctx = canvas.getContext("2d");
+
+var timer_id = null;
+document.getElementById('it_is_game_play').onclick = function ()
+{
+  if (timer_id !== null)
+    clearTimeout(timer_id);
+
+  timer_id = setTimeout(draw_all, 40);
+  reset();
+};
 
 ctx.strokeStyle = '#000';
 ctx.fillStyle = '#000';
@@ -46,9 +77,9 @@ var maps = [
     [0,1,1,1,1,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,1,0,0,1,0,0,0],
+    [0,0,0,1,0,0,1,0,0,0],
     [0,0,0,1,1,0,1,0,0,0],
     [0,0,0,1,0,1,1,0,0,0],
-    [0,0,0,1,0,0,1,0,0,0],
     [0,0,0,1,0,0,1,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,1,1,1,0,0],
@@ -294,7 +325,7 @@ function snake_step()
       score += 100;
       print_score = score_to_print(score);
       if (snake.tail.length > 5)
-        next_level();
+        level_next = true;
     }
 
   if (snake.tail.length > 0)
@@ -310,16 +341,31 @@ function snake_step()
     }
 
   if (snake.head.x >= camera.width || snake.head.x < 0)
-    reset();
+    {
+      dead = true;
+      return;
+    }
+
   if (snake.head.y >= camera.height || snake.head.y < 0)
-    reset();
+    {
+      dead = true;
+      return;
+    }
 
   for (var i = 0; i < snake.tail.length; i++)
-    if (snake.tail[i].x == snake.head.x && snake.tail[i].y == snake.head.y && step > 3)
-        reset();
+    {
+      if (snake.tail[i].x == snake.head.x && snake.tail[i].y == snake.head.y && step > 3)
+        {
+          dead = true;
+          return;
+        }
+    }
 
   if (map[snake.head.y][snake.head.x] == 1)
-    reset();
+    {
+      dead = true;
+      return;
+    }
 
   step += 1;
 }
@@ -377,6 +423,8 @@ var time = old_time;
 var dt = time - old_time;
 var tmp_dt;
 
+var live = 3;
+
 function getDt()
 {
   time = (new Date).getTime();
@@ -394,12 +442,15 @@ var blink_speed = 200;
 var blink_run = 0;
 var step = 0;
 var level = 1;
+var level_next = false;
+var dead = false;
 
 snake.move.x = 0;
 snake.move.y = 1;
 
-function next_level()
+function again()
 {
+  old_time = (new Date).getTime();
   snake.head.x = 0;
   snake.head.y = 0;
   snake.tail = [];
@@ -407,7 +458,12 @@ function next_level()
   snake.tail.push(add_tail());
   snake.move.x = 0;
   snake.move.y = 1;
+  blink.visible = true;
   step = 0;
+}
+function next_level()
+{
+  again();
   level++;
   if (level < maps.length)
     map = maps[level];
@@ -418,7 +474,7 @@ function next_level()
 function reset()
 {
   run_time = 0;
-  snake_speed = 150;
+  snake_speed = 250 - Number(document.getElementById('it_is_game_speed').value) * 20;
   blink_speed = 200;
   blink_run = 0;
   score = 0;
@@ -430,14 +486,6 @@ function reset()
 var need_draw = true;
 function draw_all()
 {
-  if (level >= maps.length)
-    {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      draw_border();
-      draw_map(map);
-      draw_score();
-      return;
-    }
   tmp_dt = getDt();
   run_time += tmp_dt;
   blink_run += tmp_dt;
@@ -453,6 +501,34 @@ function draw_all()
       blink_run -= blink_speed;
       blink_step();
       need_draw = true;
+    }
+
+  if (level_next)
+    {
+      next_level();
+      level_next = false;
+    }
+
+  if (dead)
+    {
+      live = live - 1;
+      dead = false;
+      if (live <= 0)
+        {
+          level = maps.length;
+          map = maps[0];
+        }
+      else
+        again();
+    }
+
+  if (level >= maps.length)
+    {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      draw_border();
+      draw_map(map);
+      draw_score();
+      return;
     }
 
   if (need_draw)
@@ -474,7 +550,6 @@ function draw_all()
 
   setTimeout(draw_all, Math.max(0, Math.min(blink_speed - blink_run, snake_speed - run_time)));
 }
-setTimeout(draw_all, 40);
 
 draw_border();
 draw_map(map);
