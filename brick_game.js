@@ -41,6 +41,7 @@ function create_canvas()
 
 var canvas = create_canvas();
 var ctx = canvas.getContext("2d");
+var speed_select = document.getElementById('it_is_game_speed').value;
 
 var timer_id = null;
 document.getElementById('it_is_game_play').onclick = function ()
@@ -48,8 +49,9 @@ document.getElementById('it_is_game_play').onclick = function ()
   if (timer_id !== null)
     clearTimeout(timer_id);
 
-  timer_id = setTimeout(draw_all, 40);
+  speed_select = document.getElementById('it_is_game_speed').value;
   reset();
+  timer_id = setTimeout(draw_all, 40);
 };
 
 ctx.strokeStyle = '#000';
@@ -59,11 +61,17 @@ ctx.lineWidth = 1;
 function draw_border()
 {
   ctx.beginPath();
-  ctx.moveTo(0.5,  0.5);
-  ctx.lineTo(0.5,  182.5);
-  ctx.lineTo(92.5, 182.5);
-  ctx.lineTo(92.5, 0.5);
-  ctx.lineTo(0.5,  0.5);
+  ctx.moveTo(0.5,  0);
+  ctx.lineTo(0.5,  183);
+
+  ctx.moveTo(92.5,  0);
+  ctx.lineTo(92.5,  183);
+
+  ctx.moveTo(0,  0.5);
+  ctx.lineTo(93, 0.5);
+
+  ctx.moveTo(0,  182.5);
+  ctx.lineTo(93, 182.5);
   ctx.stroke();
 }
 
@@ -143,20 +151,32 @@ function draw_block(i,j)
   var x = 2 + i + i * 8;
   var y = 2 + j + j * 8;
   ctx.beginPath();
-  ctx.moveTo(x + 0.5, y + 0.5);
-  ctx.lineTo(x + 0.5, y + 7.5);
-  ctx.lineTo(x + 7.5, y + 7.5);
-  ctx.lineTo(x + 7.5, y + 0.5);
-  ctx.lineTo(x + 0.5, y + 0.5);
+  ctx.moveTo(x + 0.5, y + 0);
+  ctx.lineTo(x + 0.5, y + 8);
+
+  ctx.moveTo(x + 0, y + 7.5)
+  ctx.lineTo(x + 8, y + 7.5);
+
+  ctx.moveTo(x + 7.5, y + 0)
+  ctx.lineTo(x + 7.5, y + 8);
+
+
+  ctx.moveTo(x + 0, y + 0.5)
+  ctx.lineTo(x + 8, y + 0.5);
   ctx.stroke();
 
   ctx.beginPath();
-  ctx.moveTo(x + 2.5, y + 2.5);
-  ctx.lineTo(x + 2.5, y + 5.5);
-  ctx.lineTo(x + 5.5, y + 5.5);
-  ctx.lineTo(x + 5.5, y + 2.5);
-  ctx.lineTo(x + 2.5, y + 2.5);
-  ctx.fill();
+  ctx.moveTo(x + 2.5, y + 2);
+  ctx.lineTo(x + 2.5, y + 6);
+
+  ctx.moveTo(x + 3.5, y + 2);
+  ctx.lineTo(x + 3.5, y + 6);
+
+  ctx.moveTo(x + 4.5, y + 2);
+  ctx.lineTo(x + 4.5, y + 6);
+
+  ctx.moveTo(x + 5.5, y + 2);
+  ctx.lineTo(x + 5.5, y + 6);
   ctx.stroke();
 }
 
@@ -180,44 +200,44 @@ function draw_number(x, y, num)
 
   if (num == 0 || num == 4 || num == 5 || num == 6 || num == 8 || num == 9)
     {
-      ctx.moveTo(x + 0.5, y + 1.5);
-      ctx.lineTo(x + 0.5, y + 5.5);
+      ctx.moveTo(x + 0.5, y + 1);
+      ctx.lineTo(x + 0.5, y + 6);
     }
 
   if (num == 0 || num == 2 || num == 6 || num == 8)
     {
-      ctx.moveTo(x + 0.5, y + 7.5);
-      ctx.lineTo(x + 0.5, y + 11.5);
+      ctx.moveTo(x + 0.5, y + 7);
+      ctx.lineTo(x + 0.5, y + 12);
     }
 
   if (num == 0 || num == 1 || num == 2 || num == 3 || num == 4 || num == 7 || num == 8 || num == 9)
     {
-      ctx.moveTo(x + 3.5, y + 1.5);
-      ctx.lineTo(x + 3.5, y + 5.5);
+      ctx.moveTo(x + 3.5, y + 1);
+      ctx.lineTo(x + 3.5, y + 6);
     }
 
   if (num == 0 || num == 1 || num == 3 || num == 4 || num == 5 || num == 6 || num == 7 || num == 8 || num == 9)
     {
-      ctx.moveTo(x + 3.5, y + 7.5);
-      ctx.lineTo(x + 3.5, y + 11.5);
+      ctx.moveTo(x + 3.5, y + 7);
+      ctx.lineTo(x + 3.5, y + 12);
     }
 
   if (num == 0 || num == 2 || num == 3 || num == 5 || num == 6 || num == 7 || num == 8 || num == 9)
     {
-      ctx.moveTo(x + 1.5, y + 0.5);
-      ctx.lineTo(x + 2.5, y + 0.5);
+      ctx.moveTo(x + 1, y + 0.5);
+      ctx.lineTo(x + 3, y + 0.5);
     }
 
   if (num == 2 || num == 3 || num == 4 || num == 5 || num == 6 || num == 8 || num == 9)
     {
-      ctx.moveTo(x + 1.5, y + 6.5);
-      ctx.lineTo(x + 2.5, y + 6.5);
+      ctx.moveTo(x + 1, y + 6.5);
+      ctx.lineTo(x + 3, y + 6.5);
     }
 
   if (num == 0 || num == 2 || num == 3 || num == 5 || num == 6 || num == 8 || num == 9)
     {
-      ctx.moveTo(x + 1.5, y + 12.5);
-      ctx.lineTo(x + 2.5, y + 12.5);
+      ctx.moveTo(x + 1, y + 12.5);
+      ctx.lineTo(x + 3, y + 12.5);
     }
 
   ctx.stroke();
@@ -284,13 +304,12 @@ document.onkeydown = function (event)
     }
 }
 
-function score_to_print(score)
+function number_to_print(score, length)
 {
-  var str = "000000";
   var score_str = score.toString();
   var ret_str = new Array();
 
-  for (var i = 0; i < str.length - score_str.length; i++)
+  for (var i = 0; i < length - score_str.length; i++)
   {
     ret_str.push('0');
   }
@@ -304,10 +323,265 @@ function draw_score()
 {
   x = 98;
   y = 20;
-  for(var i = 0; i < print_score.length; i++)
+  for (var i = 0; i < print_score.length; i++)
   {
-    draw_number(x + (i * 4 + i * 1), y, print_score[i]);
+    draw_number(x + (i * 4 + i), y, print_score[i]);
   }
+}
+
+function draw_live()
+{
+  var print_live = number_to_print(live, 2);
+  x = 108;
+  y = 47;
+  for (var i = 0; i < print_live.length; i++)
+    draw_number(x + (i * 4 + i), y, print_live[i]);
+}
+
+function draw_speed()
+{
+  var print_live = number_to_print(speed_select, 1);
+  x = 111;
+  y = 91;
+  for (var i = 0; i < print_live.length; i++)
+    draw_number(x + (i * 4 + i), y, print_live[i]);
+}
+
+function draw_level()
+{
+  var print_level = number_to_print(level, 3);
+  x = 106;
+  y = 108;
+  for (var i = 0; i < print_level.length; i++)
+    draw_number(x + (i * 4 + i), y, print_level[i]);
+}
+
+function draw_hud()
+{
+  //draw text
+  ctx.beginPath();
+  ctx.moveTo(106, 3.5);
+  ctx.lineTo(109, 3.5);
+
+  ctx.moveTo(111, 3.5);
+  ctx.lineTo(114, 3.5);
+
+  ctx.moveTo(115, 3.5);
+  ctx.lineTo(117, 3.5);
+
+  ctx.moveTo(119, 3.5);
+  ctx.lineTo(122, 3.5);
+
+  ctx.moveTo(123, 3.5);
+  ctx.lineTo(126, 3.5);
+
+  ctx.moveTo(106, 4.5);
+  ctx.lineTo(108, 4.5);
+
+  ctx.moveTo(110, 4.5);
+  ctx.lineTo(111, 4.5);
+
+  ctx.moveTo(114, 4.5);
+  ctx.lineTo(115, 4.5);
+
+  ctx.moveTo(117, 4.5);
+  ctx.lineTo(118, 4.5);
+
+  ctx.moveTo(119, 4.5);
+  ctx.lineTo(120, 4.5);
+
+  ctx.moveTo(121, 4.5);
+  ctx.lineTo(122, 4.5);
+
+  ctx.moveTo(123, 4.5);
+  ctx.lineTo(126, 4.5);
+
+  ctx.moveTo(108, 5.5);
+  ctx.lineTo(109, 5.5);
+
+  ctx.moveTo(110, 5.5);
+  ctx.lineTo(111, 5.5);
+
+  ctx.moveTo(114, 5.5);
+  ctx.lineTo(115, 5.5);
+
+  ctx.moveTo(117, 5.5);
+  ctx.lineTo(118, 5.5);
+
+  ctx.moveTo(119, 5.5);
+  ctx.lineTo(121, 5.5);
+
+  ctx.moveTo(123, 5.5);
+  ctx.lineTo(124, 5.5);
+
+  ctx.moveTo(106, 6.5);
+  ctx.lineTo(109, 6.5);
+
+  ctx.moveTo(111, 6.5);
+  ctx.lineTo(114, 6.5);
+
+  ctx.moveTo(115, 6.5);
+  ctx.lineTo(117, 6.5);
+
+  ctx.moveTo(119, 6.5);
+  ctx.lineTo(122, 6.5);
+
+  ctx.moveTo(123, 6.5);
+  ctx.lineTo(126, 6.5);
+
+  ctx.moveTo(107.5, 39);
+  ctx.lineTo(107.5, 44);
+
+  ctx.moveTo(107, 43.5);
+  ctx.lineTo(110, 43.5);
+
+  ctx.moveTo(111, 39.5);
+  ctx.lineTo(113, 39.5);
+
+  ctx.moveTo(111.5, 39);
+  ctx.lineTo(111.5, 44);
+
+  ctx.moveTo(113.5, 40);
+  ctx.lineTo(113.5, 43);
+
+  ctx.moveTo(115.5, 40);
+  ctx.lineTo(115.5, 43);
+
+  ctx.moveTo(116, 39.5);
+  ctx.lineTo(117, 39.5);
+
+  ctx.moveTo(114.5, 42);
+  ctx.lineTo(114.5, 44);
+
+  ctx.moveTo(116, 39.5);
+  ctx.lineTo(120, 39.5);
+
+  ctx.moveTo(117.5, 40);
+  ctx.lineTo(117.5, 44);
+
+  ctx.moveTo(117, 41.5);
+  ctx.lineTo(120, 41.5);
+
+  ctx.moveTo(117, 43.5);
+  ctx.lineTo(120, 43.5);
+
+  ctx.moveTo(102, 83.5);
+  ctx.lineTo(109, 83.5);
+
+  ctx.moveTo(102, 83.5);
+  ctx.lineTo(109, 83.5);
+
+  ctx.moveTo(102, 84.5);
+  ctx.lineTo(103, 84.5);
+
+  ctx.moveTo(103, 85.5);
+  ctx.lineTo(109, 85.5);
+
+  ctx.moveTo(105, 86.5);
+  ctx.lineTo(107, 86.5);
+
+  ctx.moveTo(102, 87.5);
+  ctx.lineTo(107, 87.5);
+
+  ctx.moveTo(106, 84.5);
+  ctx.lineTo(107, 84.5);
+
+  ctx.moveTo(108, 84.5);
+  ctx.lineTo(109, 84.5);
+
+  ctx.moveTo(110.5, 83);
+  ctx.lineTo(110.5, 88);
+
+  ctx.moveTo(110, 83.5);
+  ctx.lineTo(113, 83.5);
+
+  ctx.moveTo(110, 85.5);
+  ctx.lineTo(113, 85.5);
+
+  ctx.moveTo(110, 87.5);
+  ctx.lineTo(113, 87.5);
+
+  ctx.moveTo(114.5, 83);
+  ctx.lineTo(114.5, 88);
+
+  ctx.moveTo(114, 83.5);
+  ctx.lineTo(117, 83.5);
+
+  ctx.moveTo(114, 85.5);
+  ctx.lineTo(117, 85.5);
+
+  ctx.moveTo(114, 87.5);
+  ctx.lineTo(117, 87.5);
+
+  ctx.moveTo(118.5, 83);
+  ctx.lineTo(118.5, 88);
+
+  ctx.moveTo(118, 83.5);
+  ctx.lineTo(121, 83.5);
+
+  ctx.moveTo(118, 87.5);
+  ctx.lineTo(121, 87.5);
+
+  ctx.moveTo(121.5, 84);
+  ctx.lineTo(121.5, 87);
+
+  ctx.moveTo(99.5, 123);
+  ctx.lineTo(99.5, 128);
+
+  ctx.moveTo(100, 127.5);
+  ctx.lineTo(102, 127.5);
+
+  ctx.moveTo(103, 123.5);
+  ctx.lineTo(106, 123.5);
+
+  ctx.moveTo(103.5, 123);
+  ctx.lineTo(103.5, 128);
+
+  ctx.moveTo(103, 125.5);
+  ctx.lineTo(106, 125.5);
+
+  ctx.moveTo(103, 127.5);
+  ctx.lineTo(106, 127.5);
+
+  ctx.moveTo(112, 123.5);
+  ctx.lineTo(115, 123.5);
+
+  ctx.moveTo(112.5, 123);
+  ctx.lineTo(112.5, 128);
+
+  ctx.moveTo(112, 125.5);
+  ctx.lineTo(115, 125.5);
+
+  ctx.moveTo(112, 127.5);
+  ctx.lineTo(115, 127.5);
+
+  ctx.moveTo(116.5, 123);
+  ctx.lineTo(116.5, 128);
+
+  ctx.moveTo(117, 127.5);
+  ctx.lineTo(119, 127.5);
+
+  ctx.moveTo(106, 123.5);
+  ctx.lineTo(107, 123.5);
+
+  ctx.moveTo(110, 123.5);
+  ctx.lineTo(111, 123.5);
+
+  ctx.moveTo(107.5, 124);
+  ctx.lineTo(107.5, 127);
+
+  ctx.moveTo(108.5, 126);
+  ctx.lineTo(108.5, 128);
+
+  ctx.moveTo(109.5, 124);
+  ctx.lineTo(109.5, 127);
+  ctx.stroke();
+
+  //draw number
+  draw_score();
+  draw_live();
+  draw_speed();
+  draw_level();
 }
 
 function snake_step()
@@ -322,8 +596,8 @@ function snake_step()
     {
       blink_random();
       snake.tail.push(add_tail());
-      score += 100;
-      print_score = score_to_print(score);
+      score += 250 - snake_speed;
+      print_score = number_to_print(score, 6);
       if (snake.tail.length > 5)
         level_next = true;
     }
@@ -474,12 +748,13 @@ function next_level()
 function reset()
 {
   run_time = 0;
-  snake_speed = 250 - Number(document.getElementById('it_is_game_speed').value) * 20;
+  snake_speed = 250 - Number(speed_select) * 20;
   blink_speed = 200;
   blink_run = 0;
   score = 0;
   print_score = ['0','0','0','0','0','0'];
   level = 0;
+  live = 3;
   next_level();
 }
 
@@ -527,7 +802,7 @@ function draw_all()
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       draw_border();
       draw_map(map);
-      draw_score();
+      draw_hud();
       return;
     }
 
@@ -538,7 +813,7 @@ function draw_all()
     snake_render();
     blink_render();
     draw_map(map);
-    draw_score();
+    draw_hud();
 
     need_draw = false;
   }
