@@ -597,8 +597,13 @@ function snake_step()
       blink_random();
       snake.tail.push(add_tail());
       score += 250 - snake_speed;
+      if (score >= score_for_live)
+        {
+          live++;
+          score_for_live *= 2;
+        }
       print_score = number_to_print(score, 6);
-      if (snake.tail.length > 5)
+      if (snake.tail.length > 20)
         level_next = true;
     }
 
@@ -718,6 +723,7 @@ var step = 0;
 var level = 1;
 var level_next = false;
 var dead = false;
+var score_for_live = 5000;
 
 snake.move.x = 0;
 snake.move.y = 1;
@@ -753,6 +759,7 @@ function reset()
   blink_run = 0;
   score = 0;
   print_score = ['0','0','0','0','0','0'];
+  score_for_live = 5000;
   level = 0;
   live = 3;
   next_level();
