@@ -915,8 +915,10 @@ function collision(x,y)
     return true;
 
   for (var i = 0; i < snake.tail.length; i++)
-    if (snake.tail[i].x == x && snake.tail[i].y == y)
-      return true;
+    {
+      if (snake.tail[i].x == x && snake.tail[i].y == y)
+        return true;
+    }
 
   return map[y][x] != 0
 }
