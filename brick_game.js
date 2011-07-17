@@ -1001,6 +1001,7 @@ function again()
   snake.move.y = 1;
   blink.visible = true;
   step = 0;
+  blink_random();
 }
 function next_level()
 {
