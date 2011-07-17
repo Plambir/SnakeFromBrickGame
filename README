@@ -15,4 +15,11 @@ And link js:
 
     <script type="text/javascript" src="brick_game.js"></script>
 
+* Play
+
+w - up
+s - down
+d - rigth
+a - left
+
 It is fun.
