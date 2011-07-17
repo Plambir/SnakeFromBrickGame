@@ -1014,10 +1014,11 @@ function reset()
 var need_draw = true;
 function draw_all()
 {
-  if (level_next)
+  if (level_next || dead)
     {
       getDt();
       level_next = false;
+      dead = false;
       snake.move.x = 0;
       snake.move.y = 1;
     }
@@ -1048,7 +1049,6 @@ function draw_all()
   if (dead)
     {
       live = live - 1;
-      dead = false;
       if (live <= 0)
         {
           level = maps.length;
@@ -1056,6 +1056,8 @@ function draw_all()
         }
       else
         again();
+
+      setTimeout(draw_all, 1500);
     }
 
   if (level >= maps.length)
@@ -1087,7 +1089,7 @@ function draw_all()
   run_time += tmp_dt;
   blink_run += tmp_dt;
 
-  if (!level_next)
+  if (!level_next && !dead)
     setTimeout(draw_all, Math.max(0, Math.min(blink_speed - blink_run, snake_speed - run_time)));
 }
 
