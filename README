@@ -1,0 +1,18 @@
+* Intro
+
+This simple clone Snake Game from "Brick Game" old game console.
+
+License GPLv3.
+
+* Using
+
+Put in html:
+
+    <div id="it_is_game">
+    </div>
+
+And link js:
+
+    <script type="text/javascript" src="brick_game.js"></script>
+
+It is fun.
