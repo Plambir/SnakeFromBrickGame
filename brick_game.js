@@ -530,6 +530,8 @@ function add_tail()
 
 document.onkeydown = function (event)
 {
+  if (key_press)
+    return;
   switch(event.which)
     {
     case 87: //Up
@@ -537,6 +539,7 @@ document.onkeydown = function (event)
         break;
       snake.move.x = 0;
       snake.move.y = -1;
+      key_press = true;
       break;
 
     case 83: //Down
@@ -544,6 +547,7 @@ document.onkeydown = function (event)
         break;
       snake.move.x = 0;
       snake.move.y = 1;
+      key_press = true;
       break;
 
     case 65: //Left
@@ -551,6 +555,7 @@ document.onkeydown = function (event)
         break;
       snake.move.x = -1;
       snake.move.y = 0;
+      key_press = true;
       break;
 
     case 68: //Right
@@ -558,6 +563,7 @@ document.onkeydown = function (event)
         break;
       snake.move.x = 1;
       snake.move.y = 0;
+      key_press = true;
       break;
     }
 }
@@ -1049,6 +1055,7 @@ function draw_all()
       run_time -= snake_speed;
       snake_step();
       need_draw = true;
+      key_press = false;
     }
   while (blink_run > blink_speed)
     {
