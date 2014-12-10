@@ -708,8 +708,7 @@ function snake_rotate(side)
   }
 }
 
-var touch_press = false;
-document.addEventListener('touchstart', function(event) {
+function touchevent(event) {
   if(touch_press)
     return;
 
@@ -719,7 +718,11 @@ document.addEventListener('touchstart', function(event) {
 
   snake_rotate(rotate);
   touch_press = true;
-}, false);
+}
+
+var touch_press = false;
+document.addEventListener('touchstart', touchevent, false);
+document.addEventListener('ontouchstart', touchevent, false);
 
 function number_to_print(score, length)
 {
