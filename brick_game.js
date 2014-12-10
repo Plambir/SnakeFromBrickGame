@@ -680,6 +680,47 @@ document.onkeydown = function (event)
     }
 };
 
+function snake_rotate(side)
+{
+  if(snake.move.y == 1)
+  {
+    snake.move.x = side;
+    snake.move.y = 0;
+    return;
+  }
+  if(snake.move.y == -1)
+  {
+    snake.move.x = side;
+    snake.move.y = 0;
+    return;
+  }
+  if(snake.move.x == 1)
+  {
+    snake.move.x = 0;
+    snake.move.y = side;
+    return;
+  }
+  if(snake.move.x == -1)
+  {
+    snake.move.x = 0;
+    snake.move.y = side;
+    return;
+  }
+}
+
+var touch_press = false;
+document.addEventListener('touchstart', function(event) {
+  if(touch_press)
+    return;
+
+  var rotate = 1;
+  if(event.touches[0].screenX < screen.width / 2)
+    rotate = -1;
+
+  snake_rotate(rotate);
+  touch_press = true;
+}, false);
+
 function number_to_print(score, length)
 {
   var score_str = score.toString();
@@ -1168,6 +1209,7 @@ function draw_all()
       snake_step();
       need_draw = true;
       key_press = false;
+      touch_press = false;
     }
   while (blink_run > blink_speed)
     {
