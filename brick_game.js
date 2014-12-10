@@ -50,7 +50,7 @@ function create_canvas()
     "      <canvas id='it_is_game_break' width='132' height='183' />",
     "    </td>",
     "  </tr>",
-    "</table>"].join();
+    "</table>"].join("");
 
   return document.getElementById("it_is_game_break");
 }
