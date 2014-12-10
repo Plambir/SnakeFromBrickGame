@@ -92,7 +92,7 @@ function draw_border()
 }
 
 var maps = [
-[
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,1,1,1,0,0,0,0,0],
     [0,1,0,0,0,0,0,0,0,0],
@@ -113,8 +113,8 @@ var maps = [
     [0,0,0,0,0,1,1,1,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -135,21 +135,8 @@ var maps = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,1,1,1,1,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0,0],
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -157,8 +144,21 @@ var maps = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,1,1,1,1,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0],
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -179,8 +179,8 @@ var maps = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -201,8 +201,8 @@ var maps = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,1,0,0,0,0,1,1,0],
     [0,1,0,0,0,0,0,0,1,0],
@@ -223,8 +223,8 @@ var maps = [
     [0,1,0,0,0,0,0,0,1,0],
     [0,1,1,0,0,0,0,1,1,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,1,0,0,0,0,1,1,0],
     [0,1,0,0,0,0,0,0,1,0],
@@ -245,8 +245,8 @@ var maps = [
     [0,1,0,0,0,0,0,0,1,0],
     [0,1,1,0,0,0,0,1,1,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,1,0,0,0,0,0,0,0],
     [0,1,1,0,0,0,0,0,0,0],
@@ -267,8 +267,8 @@ var maps = [
     [0,0,1,0,0,0,0,0,0,0],
     [0,0,1,1,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -289,8 +289,8 @@ var maps = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,1,1,1,1,1,1,1,0],
     [0,1,0,0,0,0,0,0,1,0],
@@ -311,8 +311,8 @@ var maps = [
     [0,1,0,0,0,0,0,0,1,0],
     [0,1,1,1,1,1,1,1,1,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,0,0,0,0,0,0,0,0],
     [0,0,1,0,0,0,0,0,0,0],
@@ -333,8 +333,8 @@ var maps = [
     [0,1,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,0,0,0,0,0,0,1,0],
     [0,0,1,0,0,0,0,1,0,0],
@@ -355,8 +355,8 @@ var maps = [
     [0,0,1,0,0,0,0,1,0,0],
     [0,1,0,0,0,0,0,0,1,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,1,0,0,0,1,0,0],
     [0,1,0,1,0,1,0,1,0,0],
     [0,1,0,1,0,1,0,1,0,0],
@@ -377,8 +377,8 @@ var maps = [
     [0,1,0,1,0,1,0,1,0,0],
     [0,1,0,1,0,1,0,1,0,0],
     [0,0,0,1,0,0,0,1,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,1,0,1,1,0,1,1,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -399,8 +399,8 @@ var maps = [
     [0,1,1,0,1,1,0,1,1,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,1,0,0,0,0,1,1,0],
     [0,1,0,0,0,0,0,0,1,0],
@@ -421,8 +421,8 @@ var maps = [
     [0,1,0,0,0,0,0,0,1,0],
     [0,1,1,0,0,0,0,1,1,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,1,0,0,0,0,1,0,0],
     [0,1,1,0,0,0,0,1,1,0],
@@ -443,8 +443,8 @@ var maps = [
     [0,1,1,0,0,0,0,1,1,0],
     [0,0,1,0,0,0,0,1,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,1,1,1,1,1,1,0,0],
@@ -465,8 +465,8 @@ var maps = [
     [0,0,1,1,1,1,1,1,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,1,1,0,0,1,1,0,0],
@@ -487,8 +487,8 @@ var maps = [
     [0,0,1,1,0,0,1,1,0,0],
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-[
+  ],
+  [
     [0,0,0,0,0,0,0,0,0,0],
     [0,1,0,0,0,0,1,0,0,0],
     [0,0,1,0,0,1,0,0,0,0],
@@ -509,8 +509,8 @@ var maps = [
     [0,1,0,0,0,0,1,0,0,0],
     [0,0,1,0,0,1,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
-],
-    ];
+  ],
+];
 
 var map = maps[1];
 
@@ -553,13 +553,13 @@ function draw_map(map)
   var i;
   var j;
   for (i = 0; i < map.length; i++)
+  {
+    for (j = 0; j < map[i].length; j++)
     {
-      for (j = 0; j < map[i].length; j++)
-        {
-          if (map[i][j] == 1)
-            draw_block(j,i);
-        }
+      if (map[i][j] == 1)
+        draw_block(j,i);
     }
+  }
 }
 
 function draw_number(x, y, num)
@@ -567,67 +567,67 @@ function draw_number(x, y, num)
   ctx.beginPath();
 
   if (num === 0 || num == 4 || num == 5 || num == 6 || num == 8 || num == 9)
-    {
-      ctx.moveTo(x + 0.5, y + 1);
-      ctx.lineTo(x + 0.5, y + 6);
-    }
+  {
+    ctx.moveTo(x + 0.5, y + 1);
+    ctx.lineTo(x + 0.5, y + 6);
+  }
 
   if (num === 0 || num == 2 || num == 6 || num == 8)
-    {
-      ctx.moveTo(x + 0.5, y + 7);
-      ctx.lineTo(x + 0.5, y + 12);
-    }
+  {
+    ctx.moveTo(x + 0.5, y + 7);
+    ctx.lineTo(x + 0.5, y + 12);
+  }
 
   if (num === 0 || num == 1 || num == 2 || num == 3 || num == 4 || num == 7 || num == 8 || num == 9)
-    {
-      ctx.moveTo(x + 3.5, y + 1);
-      ctx.lineTo(x + 3.5, y + 6);
-    }
+  {
+    ctx.moveTo(x + 3.5, y + 1);
+    ctx.lineTo(x + 3.5, y + 6);
+  }
 
   if (num === 0 || num == 1 || num == 3 || num == 4 || num == 5 || num == 6 || num == 7 || num == 8 || num == 9)
-    {
-      ctx.moveTo(x + 3.5, y + 7);
-      ctx.lineTo(x + 3.5, y + 12);
-    }
+  {
+    ctx.moveTo(x + 3.5, y + 7);
+    ctx.lineTo(x + 3.5, y + 12);
+  }
 
   if (num === 0 || num == 2 || num == 3 || num == 5 || num == 6 || num == 7 || num == 8 || num == 9)
-    {
-      ctx.moveTo(x + 1, y + 0.5);
-      ctx.lineTo(x + 3, y + 0.5);
-    }
+  {
+    ctx.moveTo(x + 1, y + 0.5);
+    ctx.lineTo(x + 3, y + 0.5);
+  }
 
   if (num == 2 || num == 3 || num == 4 || num == 5 || num == 6 || num == 8 || num == 9)
-    {
-      ctx.moveTo(x + 1, y + 6.5);
-      ctx.lineTo(x + 3, y + 6.5);
-    }
+  {
+    ctx.moveTo(x + 1, y + 6.5);
+    ctx.lineTo(x + 3, y + 6.5);
+  }
 
   if (num === 0 || num == 2 || num == 3 || num == 5 || num == 6 || num == 8 || num == 9)
-    {
-      ctx.moveTo(x + 1, y + 12.5);
-      ctx.lineTo(x + 3, y + 12.5);
-    }
+  {
+    ctx.moveTo(x + 1, y + 12.5);
+    ctx.lineTo(x + 3, y + 12.5);
+  }
 
   ctx.stroke();
 }
 
 var camera = {
-    width  : 10,
-    height : 20,
-    x : 0,
-    y : 0
+  width  : 10,
+  height : 20,
+  x : 0,
+  y : 0
 };
 
 var snake = {
-    head : { x : 0, y : 0},
-    tail : [],
-    move : { x : 0, y : 0}
+  head : { x : 0, y : 0},
+  tail : [],
+  move : { x : 0, y : 0}
 };
 
 var blink = {
-    x : 0,
-    y : 0,
-    visible : false
+  x : 0,
+  y : 0,
+  visible : false
 };
 
 function add_tail()
@@ -645,39 +645,39 @@ document.onkeydown = function (event)
     return;
 
   switch(event.which)
-    {
-    case 87: //Up
-      if (snake.move.y == 1)
-        break;
-      snake.move.x = 0;
-      snake.move.y = -1;
-      key_press = true;
+  {
+  case 87: //Up
+    if (snake.move.y == 1)
       break;
+    snake.move.x = 0;
+    snake.move.y = -1;
+    key_press = true;
+    break;
 
-    case 83: //Down
-      if (snake.move.y == -1)
-        break;
-      snake.move.x = 0;
-      snake.move.y = 1;
-      key_press = true;
+  case 83: //Down
+    if (snake.move.y == -1)
       break;
+    snake.move.x = 0;
+    snake.move.y = 1;
+    key_press = true;
+    break;
 
-    case 65: //Left
-      if (snake.move.x == 1)
-        break;
-      snake.move.x = -1;
-      snake.move.y = 0;
-      key_press = true;
+  case 65: //Left
+    if (snake.move.x == 1)
       break;
+    snake.move.x = -1;
+    snake.move.y = 0;
+    key_press = true;
+    break;
 
-    case 68: //Right
-      if (snake.move.x == -1)
-        break;
-      snake.move.x = 1;
-      snake.move.y = 0;
-      key_press = true;
+  case 68: //Right
+    if (snake.move.x == -1)
       break;
-    }
+    snake.move.x = 1;
+    snake.move.y = 0;
+    key_press = true;
+    break;
+  }
 };
 
 function snake_rotate(side)
@@ -1010,58 +1010,58 @@ function snake_step()
   snake.head.y += snake.move.y;
 
   if (snake.head.x == blink.x && snake.head.y == blink.y)
+  {
+    blink_random();
+    snake.tail.push(add_tail());
+    score += 250 - snake_speed;
+    if (score >= score_for_live)
     {
-      blink_random();
-      snake.tail.push(add_tail());
-      score += 250 - snake_speed;
-      if (score >= score_for_live)
-        {
-          live++;
-          score_for_live *= 2;
-        }
-      print_score = number_to_print(score, 6);
-      if (snake.tail.length > 20)
-        level_next = true;
+      live++;
+      score_for_live *= 2;
     }
+    print_score = number_to_print(score, 6);
+    if (snake.tail.length > 20)
+      level_next = true;
+  }
 
   if (snake.tail.length > 0)
+  {
+    for(i = snake.tail.length - 1; i > 0; i--)
     {
-      for(i = snake.tail.length - 1; i > 0; i--)
-        {
-          snake.tail[i].x = snake.tail[i - 1].x;
-          snake.tail[i].y = snake.tail[i - 1].y;
-        }
-
-      snake.tail[0].x = head_x;
-      snake.tail[0].y = head_y;
+      snake.tail[i].x = snake.tail[i - 1].x;
+      snake.tail[i].y = snake.tail[i - 1].y;
     }
+
+    snake.tail[0].x = head_x;
+    snake.tail[0].y = head_y;
+  }
 
   if (snake.head.x >= camera.width || snake.head.x < 0)
-    {
-      dead = true;
-      return;
-    }
+  {
+    dead = true;
+    return;
+  }
 
   if (snake.head.y >= camera.height || snake.head.y < 0)
-    {
-      dead = true;
-      return;
-    }
+  {
+    dead = true;
+    return;
+  }
 
   for (var i = 0; i < snake.tail.length; i++)
-    {
-      if (snake.tail[i].x == snake.head.x && snake.tail[i].y == snake.head.y && step > 3)
-        {
-          dead = true;
-          return;
-        }
-    }
-
-  if (map[snake.head.y][snake.head.x] == 1)
+  {
+    if (snake.tail[i].x == snake.head.x && snake.tail[i].y == snake.head.y && step > 3)
     {
       dead = true;
       return;
     }
+  }
+
+  if (map[snake.head.y][snake.head.x] == 1)
+  {
+    dead = true;
+    return;
+  }
 
   step += 1;
 }
@@ -1090,10 +1090,10 @@ function collision(x,y)
     return true;
 
   for (var i = 0; i < snake.tail.length; i++)
-    {
-      if (snake.tail[i].x == x && snake.tail[i].y == y)
-        return true;
-    }
+  {
+    if (snake.tail[i].x == x && snake.tail[i].y == y)
+      return true;
+  }
 
   return map[y][x] !== 0;
 }
@@ -1101,10 +1101,10 @@ function collision(x,y)
 function blink_random()
 {
   do
-    {
-      x = Math.floor(Math.random() * ( camera.width));
-      y = Math.floor(Math.random() * ( camera.height));
-    }
+  {
+    x = Math.floor(Math.random() * ( camera.width));
+    y = Math.floor(Math.random() * ( camera.height));
+  }
   while(collision(x, y));
 
   blink.x = x;
@@ -1191,71 +1191,71 @@ var need_draw = true;
 function draw_all()
 {
   if (level_next || dead)
-    {
-      getDt();
-      level_next = false;
-      dead = false;
-      snake.move.x = 0;
-      snake.move.y = 1;
-    }
+  {
+    getDt();
+    level_next = false;
+    dead = false;
+    snake.move.x = 0;
+    snake.move.y = 1;
+  }
 
   tmp_dt = getDt();
   run_time += tmp_dt;
   blink_run += tmp_dt;
 
   while (run_time > snake_speed)
-    {
-      run_time -= snake_speed;
-      snake_step();
-      need_draw = true;
-      key_press = false;
-      touch_press = false;
-    }
+  {
+    run_time -= snake_speed;
+    snake_step();
+    need_draw = true;
+    key_press = false;
+    touch_press = false;
+  }
   while (blink_run > blink_speed)
-    {
-      blink_run -= blink_speed;
-      blink_step();
-      need_draw = true;
-    }
+  {
+    blink_run -= blink_speed;
+    blink_step();
+    need_draw = true;
+  }
 
   if (level_next)
-    {
-      next_level();
-      setTimeout(draw_all, 1500);
-    }
+  {
+    next_level();
+    setTimeout(draw_all, 1500);
+  }
 
   if (dead)
+  {
+    live = live - 1;
+    if (live <= 0)
     {
-      live = live - 1;
-      if (live <= 0)
-        {
-          level = maps.length;
-          map = maps[0];
-        }
-      else
-        again();
-
-      setTimeout(draw_all, 1500);
+      level = maps.length;
+      map = maps[0];
     }
+    else
+      again();
+
+    setTimeout(draw_all, 1500);
+  }
 
   if (level >= maps.length)
-    {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      draw_border();
-      draw_map(map);
-      draw_hud();
-      return;
-    }
+  {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    draw_border();
+    draw_map(map);
+    draw_hud();
+    return;
+  }
 
   if (need_draw)
   {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     draw_border();
     if (!level_next)
-      {
-        snake_render();
-        blink_render();
-      }
+    {
+      snake_render();
+      blink_render();
+    }
     draw_map(map);
     draw_hud();
 
