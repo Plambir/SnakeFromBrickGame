@@ -16,41 +16,41 @@
  */
 function create_canvas()
 {
-  document.getElementById("it_is_game").innerHTML = "\
-    <table width='100%' height='100%'>\
-      <tr>\
-        <td align='center'>\
-          <table width='132px'>\
-            <tr>\
-              <td align='center'>\
-                <button id='it_is_game_play'>play</button>\
-              </td>\
-              <td align='center'>\
-                speed:<br/>\
-                <select id='it_is_game_speed'>\
-                  <option>1</option>\
-                  <option>2</option>\
-                  <option>3</option>\
-                  <option>4</option>\
-                  <option>5</option>\
-                  <option>6</option>\
-                  <option>7</option>\
-                  <option>8</option>\
-                  <option>9</option>\
-                </select>\
-              </td>\
-            </tr>\
-          </table>\
-          <style>\
-            #it_is_game_break\
-            {\
-              background: #ccc;\
-            }\
-          </style>\
-          <canvas id='it_is_game_break' width='132' height='183' />\
-        </td>\
-      </tr>\
-    </table>";
+  document.getElementById("it_is_game").innerHTML = [
+    "<table width='100%'>",
+    "  <tr>",
+    "    <td align='center'>",
+    "      <table width='132px'>",
+    "        <tr>",
+    "          <td align='center'>",
+    "            <button id='it_is_game_play'>play</button>",
+    "          </td>",
+    "          <td align='center'>",
+    "            speed:<br/>",
+    "            <select id='it_is_game_speed'>",
+    "              <option>1</option>",
+    "              <option>2</option>",
+    "              <option>3</option>",
+    "              <option>4</option>",
+    "              <option>5</option>",
+    "              <option>6</option>",
+    "              <option>7</option>",
+    "              <option>8</option>",
+    "              <option>9</option>",
+    "            </select>",
+    "          </td>",
+    "        </tr>",
+    "      </table>",
+    "      <style>",
+    "        #it_is_game_break",
+    "        {",
+    "          background: #ccc;",
+    "        }",
+    "      </style>",
+    "      <canvas id='it_is_game_break' width='132' height='183' />",
+    "    </td>",
+    "  </tr>",
+    "</table>"].join();
 
   return document.getElementById("it_is_game_break");
 }
@@ -522,14 +522,14 @@ function draw_block(i,j)
   ctx.moveTo(x + 0.5, y + 0);
   ctx.lineTo(x + 0.5, y + 8);
 
-  ctx.moveTo(x + 0, y + 7.5)
+  ctx.moveTo(x + 0, y + 7.5);
   ctx.lineTo(x + 8, y + 7.5);
 
-  ctx.moveTo(x + 7.5, y + 0)
+  ctx.moveTo(x + 7.5, y + 0);
   ctx.lineTo(x + 7.5, y + 8);
 
 
-  ctx.moveTo(x + 0, y + 0.5)
+  ctx.moveTo(x + 0, y + 0.5);
   ctx.lineTo(x + 8, y + 0.5);
   ctx.stroke();
 
@@ -566,31 +566,31 @@ function draw_number(x, y, num)
 {
   ctx.beginPath();
 
-  if (num == 0 || num == 4 || num == 5 || num == 6 || num == 8 || num == 9)
+  if (num === 0 || num == 4 || num == 5 || num == 6 || num == 8 || num == 9)
     {
       ctx.moveTo(x + 0.5, y + 1);
       ctx.lineTo(x + 0.5, y + 6);
     }
 
-  if (num == 0 || num == 2 || num == 6 || num == 8)
+  if (num === 0 || num == 2 || num == 6 || num == 8)
     {
       ctx.moveTo(x + 0.5, y + 7);
       ctx.lineTo(x + 0.5, y + 12);
     }
 
-  if (num == 0 || num == 1 || num == 2 || num == 3 || num == 4 || num == 7 || num == 8 || num == 9)
+  if (num === 0 || num == 1 || num == 2 || num == 3 || num == 4 || num == 7 || num == 8 || num == 9)
     {
       ctx.moveTo(x + 3.5, y + 1);
       ctx.lineTo(x + 3.5, y + 6);
     }
 
-  if (num == 0 || num == 1 || num == 3 || num == 4 || num == 5 || num == 6 || num == 7 || num == 8 || num == 9)
+  if (num === 0 || num == 1 || num == 3 || num == 4 || num == 5 || num == 6 || num == 7 || num == 8 || num == 9)
     {
       ctx.moveTo(x + 3.5, y + 7);
       ctx.lineTo(x + 3.5, y + 12);
     }
 
-  if (num == 0 || num == 2 || num == 3 || num == 5 || num == 6 || num == 7 || num == 8 || num == 9)
+  if (num === 0 || num == 2 || num == 3 || num == 5 || num == 6 || num == 7 || num == 8 || num == 9)
     {
       ctx.moveTo(x + 1, y + 0.5);
       ctx.lineTo(x + 3, y + 0.5);
@@ -602,7 +602,7 @@ function draw_number(x, y, num)
       ctx.lineTo(x + 3, y + 6.5);
     }
 
-  if (num == 0 || num == 2 || num == 3 || num == 5 || num == 6 || num == 8 || num == 9)
+  if (num === 0 || num == 2 || num == 3 || num == 5 || num == 6 || num == 8 || num == 9)
     {
       ctx.moveTo(x + 1, y + 12.5);
       ctx.lineTo(x + 3, y + 12.5);
@@ -620,7 +620,7 @@ var camera = {
 
 var snake = {
     head : { x : 0, y : 0},
-    tail : new Array(),
+    tail : [],
     move : { x : 0, y : 0}
 };
 
@@ -643,6 +643,7 @@ document.onkeydown = function (event)
 {
   if (key_press)
     return;
+
   switch(event.which)
     {
     case 87: //Up
@@ -677,12 +678,12 @@ document.onkeydown = function (event)
       key_press = true;
       break;
     }
-}
+};
 
 function number_to_print(score, length)
 {
   var score_str = score.toString();
-  var ret_str = new Array();
+  var ret_str = [];
 
   for (var i = 0; i < length - score_str.length; i++)
   {
@@ -1053,7 +1054,7 @@ function collision(x,y)
         return true;
     }
 
-  return map[y][x] != 0
+  return map[y][x] !== 0;
 }
 
 function blink_random()
@@ -1075,7 +1076,7 @@ snake.tail.push(add_tail());
 
 blink_random();
 
-var old_time = (new Date).getTime();
+var old_time = (new Date()).getTime();
 var time = old_time;
 var dt = time - old_time;
 var tmp_dt;
@@ -1084,7 +1085,7 @@ var live = 3;
 
 function getDt()
 {
-  time = (new Date).getTime();
+  time = (new Date()).getTime();
   dt = time - old_time;
   old_time = time;
   return dt;
@@ -1108,7 +1109,7 @@ snake.move.y = 1;
 
 function again()
 {
-  old_time = (new Date).getTime();
+  old_time = (new Date()).getTime();
   snake.head.x = 0;
   snake.head.y = 0;
   snake.tail = [];
