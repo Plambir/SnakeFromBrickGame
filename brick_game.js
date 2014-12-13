@@ -680,49 +680,65 @@ document.onkeydown = function (event)
   }
 };
 
-function snake_rotate(side)
+function snake_rotate(angle)
 {
-  if(snake.move.y == 1)
+  if((angle <= 45 && angle >= 0) || (angle > -45 && angle <= 0)) //right
   {
-    snake.move.x = side;
+    snake.move.x = 1;
     snake.move.y = 0;
-    return;
   }
-  if(snake.move.y == -1)
-  {
-    snake.move.x = side;
-    snake.move.y = 0;
-    return;
-  }
-  if(snake.move.x == 1)
+  else if((angle > 45) && (angle <= 135)) //down
   {
     snake.move.x = 0;
-    snake.move.y = side;
-    return;
+    snake.move.y = 1;
   }
-  if(snake.move.x == -1)
+  else if((angle > 135 && angle <= 180) || (angle <= -135 && angle >= -180)) //left
+  {
+    snake.move.x = -1;
+    snake.move.y = 0;
+  }
+  else if((angle <=-45) && (angle > -135)) //up
   {
     snake.move.x = 0;
-    snake.move.y = side;
-    return;
+    snake.move.y = -1;
   }
 }
 
-function touchevent(event) {
-  if(touch_press)
+var touch_start = [0, 0];
+var identifier = 0;
+
+function touchevent_start(event) {
+  if(touch_press || event.touches[0].identifier != identifier)
     return;
 
-  var rotate = 1;
-  if(event.touches[0].screenX < screen.width / 2)
-    rotate = -1;
+  touch_start = [event.touches[0].screenX, event.touches[0].screenY];
+}
 
-  snake_rotate(rotate);
+function touchevent_end(event) {
+  if(touch_press || event.changedTouches[0].identifier != identifier)
+    return;
+
+  var touch_end = [event.changedTouches[0].screenX, event.changedTouches[0].screenY];
+  var vector = [touch_end[0] - touch_start[0], touch_end[1] - touch_start[1]];
+  var v_length = Math.sqrt(vector[0] * vector[0] + vector[1] * vector[1]);
+  vector[0] = vector[0] / v_length;
+  vector[1] = vector[1] / v_length;
+
+  var angle_rad = Math.acos( (vector[0] * 1.0 + vector[1] * 0.0) / ( Math.sqrt(vector[0]*vector[0] + vector[1]*vector[1]) * Math.sqrt(1.0*1.0 + 0.0*0.0)));
+  var angle_deg = angle_rad * 180 / Math.PI;
+  if(vector[1] < 0)
+    angle_deg = -angle_deg;
+
+  console.log(angle_deg);
+  snake_rotate(angle_deg);
   touch_press = true;
 }
 
 var touch_press = false;
-document.addEventListener('touchstart', touchevent, false);
-document.addEventListener('ontouchstart', touchevent, false);
+document.addEventListener('touchstart', touchevent_start, false);
+document.addEventListener('touchend', touchevent_end, false);
+document.addEventListener('ontouchstart', touchevent_start, false);
+document.addEventListener('ontouchend', touchevent_end, false);
 
 function number_to_print(score, length)
 {
